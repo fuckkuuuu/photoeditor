@@ -5,10 +5,14 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -29,6 +33,7 @@ import javafx.util.Duration;
             // 创建堆叠面板
             StackPane root = new StackPane();
             root.setPadding(new Insets(10));
+            root.setStyle("-fx-background-color: black;");
             root.getChildren().add(slides[0]);
 
             // 创建时间轴对象
@@ -55,7 +60,42 @@ import javafx.util.Duration;
             primaryStage.setMaxHeight(maxHeight);
             primaryStage.setTitle("Slideshow");
             primaryStage.show();
+            // 创建按钮容器
+            HBox buttonBox = new HBox();
+            buttonBox.setAlignment(Pos.BOTTOM_CENTER);
+            buttonBox.setSpacing(10);
+            buttonBox.setPadding(new Insets(0, 0, 20, 0));
+
+            // 创建上一张按钮
+            Button prevButton = new Button("Prev");
+            prevButton.setOnAction(event -> {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                root.getChildren().set(0, slides[currentSlide]);
+                resizeStage(slides[currentSlide].getImage().getWidth(), slides[currentSlide].getImage().getHeight());
+            });
+
+            // 创建下一张按钮
+            Button nextButton = new Button("Next");
+            nextButton.setOnAction(event -> {
+                currentSlide = (currentSlide + 1) % slides.length;
+                root.getChildren().set(0, slides[currentSlide]);
+                resizeStage(slides[currentSlide].getImage().getWidth(), slides[currentSlide].getImage().getHeight());
+            });
+            Button pauseButton = new Button("Pause");
+            pauseButton.setOnAction(event ->{
+                timeline.pause();
+            });
+            Button playButton = new Button("Play");
+
+            playButton.setOnAction(event -> {
+                timeline.play();
+            });
+            // 将按钮添加到容器中
+            buttonBox.getChildren().addAll(prevButton, nextButton,pauseButton,playButton);
+            root.getChildren().add(buttonBox);
         }
+
+
 
         private void resizeStage(double imageWidth, double imageHeight) {
             // 调整窗口大小以适应当前图片的尺寸
