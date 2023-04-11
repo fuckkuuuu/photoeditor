@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edit.EditController">
+   <center>
+      <ImageView fitHeight="482.0" fitWidth="630.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <FlowPane prefHeight="598.0" prefWidth="298.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <Pane prefHeight="44.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="returnToPre" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" text="Return" />
+            <Button fx:id="next" layoutX="614.0" layoutY="3.0" mnemonicParsing="false" text="Next" />
+            <Button fx:id="save" layoutX="685.0" layoutY="3.0" mnemonicParsing="false" text="Save" />
+            <Button fx:id="back" layoutX="559.0" layoutY="3.0" mnemonicParsing="false" text="Back" />
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <Pane prefHeight="79.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar layoutX="31.0" layoutY="14.0" prefHeight="40.0" prefWidth="720.0">
+              <buttons>
+                <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="106.0" text="Button" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

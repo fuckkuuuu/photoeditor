@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="rootPane" maxHeight="1000.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edit.EditController">
+   <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1400.0">
+      <center>
+         <ImageView fitHeight="650.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+      </center>
+      <top>
+         <Pane prefHeight="49.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <Button fx:id="returnToPre" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" text="Return" />
+            <Button fx:id="next" layoutX="980.0" layoutY="3.0" mnemonicParsing="false" text="Next" />
+            <Button fx:id="save" layoutX="1052.0" layoutY="3.0" mnemonicParsing="false" text="Save" />
+            <Button fx:id="back" layoutX="925.0" layoutY="3.0" mnemonicParsing="false" text="Back" />
+         </Pane>
+      </top>
+      <bottom>
+         <Pane prefHeight="94.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <ButtonBar layoutX="166.0" layoutY="14.0" prefHeight="40.0" prefWidth="720.0">
+               <buttons>
+                  <Button fx:id="tietu" mnemonicParsing="false" text="贴图" />
+                  <Button fx:id="cut" mnemonicParsing="false" text="裁剪" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="106.0" text="Button" />
+               </buttons>
+            </ButtonBar>
+         </Pane>
+      </bottom>
+      <right>
+         <ScrollPane fx:id="scrollPane" maxWidth="300.0" prefHeight="654.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+      </right>
+   </BorderPane>
+</Pane>
